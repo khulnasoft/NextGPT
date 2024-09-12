@@ -1,12 +1,6 @@
-<div align="center">
 
-<a href='#企业版'>
-  <img src="./docs/images/ent.svg" alt="icon"/>
-</a>
 
-<h1 align="center">NextChat (NextGPT)</h1>
-
-English / [简体中文](./README_CN.md)
+# NextChat (NextGPT)
 
 One-Click to get a well-designed cross-platform ChatGPT web UI, with GPT3, GPT4 & Gemini Pro support.
 
@@ -17,18 +11,18 @@ One-Click to get a well-designed cross-platform ChatGPT web UI, with GPT3, GPT4 
 [![MacOS][MacOS-image]][download-url]
 [![Linux][Linux-image]][download-url]
 
-[Web App](https://app.nextchat.dev/) / [Desktop App](https://github.com/Yidadaa/NextGPT/releases) / [Discord](https://discord.gg/YCkeafCafC) / [Enterprise Edition](#enterprise-edition) / [Twitter](https://twitter.com/NextChatDev)
+[Web App](https://app.nextchat.dev/) / [Desktop App](https://github.com/khulnasoft/NextGPT/releases) / [Discord](https://discord.gg/KhulnaSoft) / [Enterprise Edition](#enterprise-edition) / [Twitter](https://twitter.com/NextChatDev)
 
-[网页版](https://app.nextchat.dev/) / [客户端](https://github.com/Yidadaa/NextGPT/releases) / [企业版](#%E4%BC%81%E4%B8%9A%E7%89%88) / [反馈](https://github.com/Yidadaa/NextGPT/issues)
+[网页版](https://app.nextchat.dev/) / [客户端](https://github.com/khulnasoft/NextGPT/releases) / [企业版](#%E4%BC%81%E4%B8%9A%E7%89%88) / [反馈](https://github.com/khulnasoft/NextGPT/issues)
 
 [web-url]: https://app.nextchat.dev/
-[download-url]: https://github.com/Yidadaa/NextGPT/releases
+[download-url]: https://github.com/khulnasoft/NextGPT/releases
 [Web-image]: https://img.shields.io/badge/Web-PWA-orange?logo=microsoftedge
 [Windows-image]: https://img.shields.io/badge/-Windows-blue?logo=windows
 [MacOS-image]: https://img.shields.io/badge/-MacOS-black?logo=apple
 [Linux-image]: https://img.shields.io/badge/-Linux-333?logo=ubuntu
 
-[<img src="https://vercel.com/button" alt="Deploy on Zeabur" height="30">](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkhulnasoft%2FNextGPT&env=OPENAI_API_KEY&env=CODE&project-name=nextchat&repository-name=NextChat) [<img src="https://zeabur.com/button.svg" alt="Deploy on Zeabur" height="30">](https://zeabur.com/templates/ZBUEFA)  [<img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod" height="30">](https://gitpod.io/#https://github.com/Yidadaa/NextGPT)
+[<img src="https://vercel.com/button" alt="Deploy on Zeabur" height="30">](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkhulnasoft%2FNextGPT&env=OPENAI_API_KEY&env=CODE&project-name=nextchat&repository-name=NextChat) [<img src="https://zeabur.com/button.svg" alt="Deploy on Zeabur" height="30">](https://zeabur.com/templates/ZBUEFA)  [<img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod" height="30">](https://gitpod.io/#https://github.com/khulnasoft/NextGPT)
 
 [<img src="https://github.com/user-attachments/assets/903482d4-3e87-4134-9af1-f2588fa90659" height="60" width="288" >](https://monica.im/?utm=nxcrp)
 
@@ -65,7 +59,7 @@ For enterprise inquiries, please contact: **business@nextchat.dev**
 ## Features
 
 - **Deploy for free with one-click** on Vercel in under 1 minute
-- Compact client (~5MB) on Linux/Windows/MacOS, [download it now](https://github.com/Yidadaa/NextGPT/releases)
+- Compact client (~5MB) on Linux/Windows/MacOS, [download it now](https://github.com/khulnasoft/NextGPT/releases)
 - Fully compatible with self-deployed LLMs, recommended for use with [RWKV-Runner](https://github.com/josStorer/RWKV-Runner) or [LocalAI](https://github.com/go-skynet/LocalAI)
 - Privacy first, all data is stored locally in the browser
 - Markdown support: LaTex, mermaid, code highlight, etc.
@@ -84,16 +78,16 @@ For enterprise inquiries, please contact: **business@nextchat.dev**
 
 ## Roadmap
 
-- [x] System Prompt: pin a user defined prompt as system prompt [#138](https://github.com/Yidadaa/NextGPT/issues/138)
+- [x] System Prompt: pin a user defined prompt as system prompt [#138](https://github.com/khulnasoft/NextGPT/issues/138)
 - [x] User Prompt: user can edit and save custom prompts to prompt list
-- [x] Prompt Template: create a new chat with pre-defined in-context prompts [#993](https://github.com/Yidadaa/NextGPT/issues/993)
-- [x] Share as image, share to ShareGPT [#1741](https://github.com/Yidadaa/NextGPT/pull/1741)
+- [x] Prompt Template: create a new chat with pre-defined in-context prompts [#993](https://github.com/khulnasoft/NextGPT/issues/993)
+- [x] Share as image, share to ShareGPT [#1741](https://github.com/khulnasoft/NextGPT/pull/1741)
 - [x] Desktop App with tauri
 - [x] Self-host Model: Fully compatible with [RWKV-Runner](https://github.com/josStorer/RWKV-Runner), as well as server deployment of [LocalAI](https://github.com/go-skynet/LocalAI): llama/gpt4all/rwkv/vicuna/koala/gpt4all-j/cerebras/falcon/dolly etc.
 - [x] Artifacts: Easily preview, copy and share generated content/webpages through a separate window [#5092](https://github.com/khulnasoft/NextGPT/pull/5092)
-- [x] Plugins: support artifacts, network search, calculator, any other apis etc. [#165](https://github.com/Yidadaa/NextGPT/issues/165)
+- [x] Plugins: support artifacts, network search, calculator, any other apis etc. [#165](https://github.com/khulnasoft/NextGPT/issues/165)
   - [x] artifacts
-  - [ ] network search, calculator, any other apis etc. [#165](https://github.com/Yidadaa/NextGPT/issues/165)
+  - [ ] network search, calculator, any other apis etc. [#165](https://github.com/khulnasoft/NextGPT/issues/165)
 - [ ] local knowledge base
 
 ## What's New
@@ -108,7 +102,7 @@ For enterprise inquiries, please contact: **business@nextchat.dev**
 ## 主要功能
 
 - 在 1 分钟内使用 Vercel **免费一键部署**
-- 提供体积极小（~5MB）的跨平台客户端（Linux/Windows/MacOS）, [下载地址](https://github.com/Yidadaa/NextGPT/releases)
+- 提供体积极小（~5MB）的跨平台客户端（Linux/Windows/MacOS）, [下载地址](https://github.com/khulnasoft/NextGPT/releases)
 - 完整的 Markdown 支持：LaTex 公式、Mermaid 流程图、代码高亮等等
 - 精心设计的 UI，响应式设计，支持深色模式，支持 PWA
 - 极快的首屏加载速度（~100kb），支持流式响应
@@ -121,16 +115,16 @@ For enterprise inquiries, please contact: **business@nextchat.dev**
 
 ## 开发计划
 
-- [x] 为每个对话设置系统 Prompt [#138](https://github.com/Yidadaa/NextGPT/issues/138)
+- [x] 为每个对话设置系统 Prompt [#138](https://github.com/khulnasoft/NextGPT/issues/138)
 - [x] 允许用户自行编辑内置 Prompt 列表
-- [x] 预制角色：使用预制角色快速定制新对话 [#993](https://github.com/Yidadaa/NextGPT/issues/993)
-- [x] 分享为图片，分享到 ShareGPT 链接 [#1741](https://github.com/Yidadaa/NextGPT/pull/1741)
+- [x] 预制角色：使用预制角色快速定制新对话 [#993](https://github.com/khulnasoft/NextGPT/issues/993)
+- [x] 分享为图片，分享到 ShareGPT 链接 [#1741](https://github.com/khulnasoft/NextGPT/pull/1741)
 - [x] 使用 tauri 打包桌面应用
 - [x] 支持自部署的大语言模型：开箱即用 [RWKV-Runner](https://github.com/josStorer/RWKV-Runner) ，服务端部署 [LocalAI 项目](https://github.com/go-skynet/LocalAI) llama / gpt4all / rwkv / vicuna / koala / gpt4all-j / cerebras / falcon / dolly 等等，或者使用 [api-for-open-llm](https://github.com/xusenlinzy/api-for-open-llm)
 - [x] Artifacts: 通过独立窗口，轻松预览、复制和分享生成的内容/可交互网页 [#5092](https://github.com/khulnasoft/NextGPT/pull/5092)
-- [x] 插件机制，支持 artifacts，联网搜索、计算器、调用其他平台 api [#165](https://github.com/Yidadaa/NextGPT/issues/165)
+- [x] 插件机制，支持 artifacts，联网搜索、计算器、调用其他平台 api [#165](https://github.com/khulnasoft/NextGPT/issues/165)
    - [x] artifacts
-   - [ ] 支持联网搜索、计算器、调用其他平台 api [#165](https://github.com/Yidadaa/NextGPT/issues/165)
+   - [ ] 支持联网搜索、计算器、调用其他平台 api [#165](https://github.com/khulnasoft/NextGPT/issues/165)
  - [ ] 本地知识库
 
 ## 最新动态
@@ -140,16 +134,14 @@ For enterprise inquiries, please contact: **business@nextchat.dev**
 - 🚀 v2.9.11 现在可以使用自定义 Azure 服务了。
 - 🚀 v2.8 发布了横跨 Linux/Windows/MacOS 的体积极小的客户端。
 - 🚀 v2.7 现在可以将会话分享为图片了，也可以分享到 ShareGPT 的在线链接。
-- 🚀 v2.0 已经发布，现在你可以使用面具功能快速创建预制对话了！ 了解更多： [ChatGPT 提示词高阶技能：零次、一次和少样本提示](https://github.com/Yidadaa/NextGPT/issues/138)。
+- 🚀 v2.0 已经发布，现在你可以使用面具功能快速创建预制对话了！ 了解更多： [ChatGPT 提示词高阶技能：零次、一次和少样本提示](https://github.com/khulnasoft/NextGPT/issues/138)。
 - 💡 想要更方便地随时随地使用本项目？可以试下这款桌面插件：https://github.com/mushan0x0/AI0x0.com
 
 ## Get Started
 
-> [简体中文 > 如何开始使用](./README_CN.md#开始使用)
-
 1. Get [OpenAI API Key](https://platform.openai.com/account/api-keys);
 2. Click
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FYidadaa%2FNextGPT&env=OPENAI_API_KEY&env=CODE&project-name=nextgpt&repository-name=NextGPT), remember that `CODE` is your page password;
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FKhulnaSoft%2FNextGPT&env=OPENAI_API_KEY&env=CODE&project-name=nextgpt&repository-name=NextGPT), remember that `CODE` is your page password;
 3. Enjoy :)
 
 ## FAQ
@@ -367,7 +359,7 @@ NodeJS >= 18, Docker >= 20
 
 > [简体中文 > 如何进行二次开发](./README_CN.md#开发)
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Yidadaa/NextGPT)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/khulnasoft/NextGPT)
 
 Before starting development, you must create a new `.env.local` file at project root, and place your api key into it:
 
@@ -395,12 +387,12 @@ yarn dev
 ### Docker (Recommended)
 
 ```shell
-docker pull yidadaa/nextgpt
+docker pull khulnasoft/nextgpt
 
 docker run -d -p 3000:3000 \
    -e OPENAI_API_KEY=sk-xxxx \
    -e CODE=your-password \
-   yidadaa/nextgpt
+   khulnasoft/nextgpt
 ```
 
 You can start service behind a proxy:
@@ -410,7 +402,7 @@ docker run -d -p 3000:3000 \
    -e OPENAI_API_KEY=sk-xxxx \
    -e CODE=your-password \
    -e PROXY_URL=http://localhost:7890 \
-   yidadaa/nextgpt
+   khulnasoft/nextgpt
 ```
 
 If your proxy needs password, use:
@@ -422,7 +414,7 @@ If your proxy needs password, use:
 ### Shell
 
 ```shell
-bash <(curl -s https://raw.githubusercontent.com/Yidadaa/NextGPT/main/scripts/setup.sh)
+bash <(curl -s https://raw.githubusercontent.com/khulnasoft/NextGPT/main/scripts/setup.sh)
 ```
 
 ## Synchronizing Chat Records (UpStash)
@@ -448,44 +440,6 @@ bash <(curl -s https://raw.githubusercontent.com/Yidadaa/NextGPT/main/scripts/se
 ## Translation
 
 If you want to add a new translation, read this [document](./docs/translation.md).
-
-## Donation
-
-[Buy Me a Coffee](https://www.buymeacoffee.com/yidadaa)
-
-## Special Thanks
-
-### Sponsor
-
-> 仅列出捐赠金额 >= 100RMB 的用户。
-
-[@mushan0x0](https://github.com/mushan0x0)
-[@ClarenceDan](https://github.com/ClarenceDan)
-[@zhangjia](https://github.com/zhangjia)
-[@hoochanlon](https://github.com/hoochanlon)
-[@relativequantum](https://github.com/relativequantum)
-[@desenmeng](https://github.com/desenmeng)
-[@webees](https://github.com/webees)
-[@chazzhou](https://github.com/chazzhou)
-[@hauy](https://github.com/hauy)
-[@Corwin006](https://github.com/Corwin006)
-[@yankunsong](https://github.com/yankunsong)
-[@ypwhs](https://github.com/ypwhs)
-[@fxxxchao](https://github.com/fxxxchao)
-[@hotic](https://github.com/hotic)
-[@WingCH](https://github.com/WingCH)
-[@jtung4](https://github.com/jtung4)
-[@micozhu](https://github.com/micozhu)
-[@jhansion](https://github.com/jhansion)
-[@Sha1rholder](https://github.com/Sha1rholder)
-[@AnsonHyq](https://github.com/AnsonHyq)
-[@synwith](https://github.com/synwith)
-[@piksonGit](https://github.com/piksonGit)
-[@ouyangzhiping](https://github.com/ouyangzhiping)
-[@wenjiavv](https://github.com/wenjiavv)
-[@LeXwDeX](https://github.com/LeXwDeX)
-[@Licoy](https://github.com/Licoy)
-[@shangmin2009](https://github.com/shangmin2009)
 
 ### Contributors
 
