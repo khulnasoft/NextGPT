@@ -54,7 +54,7 @@ if ! command -v node >/dev/null || ! command -v git >/dev/null || ! command -v y
 fi
 
 # Clone the repository and install dependencies
-git clone https://github.com/khulnasoft/NextGPT
+git clone https://github.com/KhulnaSoft/NextGPT
 cd NextGPT
 yarn install
 

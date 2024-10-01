@@ -1,11 +1,16 @@
 import { getClientConfig } from "../config/client";
 import {
   ACCESS_CODE_PREFIX,
-  Azure,
   ModelProvider,
   ServiceProvider,
 } from "../constant";
-import { ChatMessage, ModelType, useAccessStore, useChatStore } from "../store";
+import {
+  ChatMessageTool,
+  ChatMessage,
+  ModelType,
+  useAccessStore,
+  useChatStore,
+} from "../store";
 import { ChatGPTApi, DalleRequestPayload } from "./platforms/openai";
 import { GeminiProApi } from "./platforms/google";
 import { ClaudeApi } from "./platforms/anthropic";
@@ -20,6 +25,7 @@ export const ROLES = ["system", "user", "assistant"] as const;
 export type MessageRole = (typeof ROLES)[number];
 
 export const Models = ["gpt-3.5-turbo", "gpt-4"] as const;
+export const TTSModels = ["tts-1", "tts-1-hd"] as const;
 export type ChatModel = ModelType;
 
 export interface MultimodalContent {
@@ -48,6 +54,15 @@ export interface LLMConfig {
   style?: DalleRequestPayload["style"];
 }
 
+export interface SpeechOptions {
+  model: string;
+  input: string;
+  voice: string;
+  response_format?: string;
+  speed?: number;
+  onController?: (controller: AbortController) => void;
+}
+
 export interface ChatOptions {
   messages: RequestMessage[];
   config: LLMConfig;
@@ -56,6 +71,8 @@ export interface ChatOptions {
   onFinish: (message: string) => void;
   onError?: (err: Error) => void;
   onController?: (controller: AbortController) => void;
+  onBeforeTool?: (tool: ChatMessageTool) => void;
+  onAfterTool?: (tool: ChatMessageTool) => void;
 }
 
 export interface LLMUsage {
@@ -80,6 +97,7 @@ export interface LLMModelProvider {
 
 export abstract class LLMApi {
   abstract chat(options: ChatOptions): Promise<void>;
+  abstract speech(options: SpeechOptions): Promise<ArrayBuffer>;
   abstract usage(): Promise<LLMUsage>;
   abstract models(): Promise<LLMModel[]>;
 }
@@ -154,7 +172,7 @@ export class ClientApi {
       .concat([
         {
           from: "human",
-          value: "Share from [NextGPT]: https://github.com/khulnasoft/NextGPT",
+          value: "Share from [NextGpt]: https://github.com/Yidadaa/NextGPT",
         },
       ]);
     // 敬告二开开发者们，为了开源大模型的发展，请不要修改上述消息，此消息用于后续数据清洗使用
@@ -197,13 +215,16 @@ export function validString(x: string): boolean {
   return x?.length > 0;
 }
 
-export function getHeaders() {
+export function getHeaders(ignoreHeaders: boolean = false) {
   const accessStore = useAccessStore.getState();
   const chatStore = useChatStore.getState();
-  const headers: Record<string, string> = {
-    "Content-Type": "application/json",
-    Accept: "application/json",
-  };
+  let headers: Record<string, string> = {};
+  if (!ignoreHeaders) {
+    headers = {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    };
+  }
 
   const clientConfig = getClientConfig();
 
@@ -250,7 +271,13 @@ export function getHeaders() {
   }
 
   function getAuthHeader(): string {
-    return isAzure ? "api-key" : isAnthropic ? "x-api-key" : "Authorization";
+    return isAzure
+      ? "api-key"
+      : isAnthropic
+      ? "x-api-key"
+      : isGoogle
+      ? "x-goog-api-key"
+      : "Authorization";
   }
 
   const {
@@ -261,14 +288,15 @@ export function getHeaders() {
     apiKey,
     isEnabledAccessControl,
   } = getConfig();
-  // when using google api in app, not set auth header
-  if (isGoogle && clientConfig?.isApp) return headers;
   // when using baidu api in app, not set auth header
   if (isBaidu && clientConfig?.isApp) return headers;
 
   const authHeader = getAuthHeader();
 
-  const bearerToken = getBearerToken(apiKey, isAzure || isAnthropic);
+  const bearerToken = getBearerToken(
+    apiKey,
+    isAzure || isAnthropic || isGoogle,
+  );
 
   if (bearerToken) {
     headers[authHeader] = bearerToken;

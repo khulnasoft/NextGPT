@@ -1,7 +1,7 @@
 import { getClientConfig } from "../config/client";
 import { SubmitKey } from "../store/config";
 import { LocaleType } from "./index";
-
+import { SAAS_CHAT_UTM_URL } from "@/app/constant";
 // if you are adding a new translation, please use PartialLocaleType instead of LocaleType
 
 const isApp = !!getClientConfig()?.isApp;
@@ -9,16 +9,26 @@ const en: LocaleType = {
   WIP: "Coming Soon...",
   Error: {
     Unauthorized: isApp
-      ? "Invalid API Key, please check it in [Settings](/#/settings) page."
-      : "Unauthorized access, please enter access code in [auth](/#/auth) page, or enter your OpenAI API Key.",
+      ? `😆 Oops, there's an issue. No worries:
+     \\ 1️⃣ New here? [Click to start chatting now 🚀](${SAAS_CHAT_UTM_URL})
+     \\ 2️⃣ Want to use your own OpenAI resources? [Click here](/#/settings) to change settings ⚙️`
+      : `😆 Oops, there's an issue. Let's fix it:
+     \ 1️⃣ New here? [Click to start chatting now 🚀](${SAAS_CHAT_UTM_URL})
+     \ 2️⃣ Using a private setup? [Click here](/#/auth) to enter your key 🔑
+     \ 3️⃣ Want to use your own OpenAI resources? [Click here](/#/settings) to change settings ⚙️
+     `,
   },
   Auth: {
+    Return: "Return",
     Title: "Need Access Code",
     Tips: "Please enter access code below",
     SubTips: "Or enter your OpenAI or Google API Key",
     Input: "access code",
     Confirm: "Confirm",
     Later: "Later",
+    SaasTips: "Too Complex, Use Immediately Now",
+    TopTips:
+      "🥳 NextGpt AI launch promotion: Instantly unlock the latest models like OpenAI o1, GPT-4o, Claude-3.5!",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} messages`,
@@ -45,6 +55,10 @@ const en: LocaleType = {
       Delete: "Delete",
       Edit: "Edit",
       FullScreen: "FullScreen",
+      RefreshTitle: "Refresh Title",
+      RefreshToast: "Title refresh request sent",
+      Speech: "Play",
+      StopSpeech: "Stop",
     },
     Commands: {
       new: "Start a new chat",
@@ -52,6 +66,7 @@ const en: LocaleType = {
       next: "Next Chat",
       prev: "Previous Chat",
       clear: "Clear Context",
+      fork: "Copy Chat",
       del: "Delete Chat",
     },
     InputActions: {
@@ -78,11 +93,21 @@ const en: LocaleType = {
       return inputHints + ", / to search prompts, : to use commands";
     },
     Send: "Send",
+    StartSpeak: "Start Speak",
+    StopSpeak: "Stop Speak",
     Config: {
       Reset: "Reset to Default",
       SaveAs: "Save as Mask",
     },
     IsContext: "Contextual Prompt",
+    ShortcutKey: {
+      Title: "Keyboard Shortcuts",
+      newChat: "Open New Chat",
+      focusInput: "Focus Input Field",
+      copyLastMessage: "Copy Last Reply",
+      copyLastCode: "Copy Last Code Block",
+      showShortcutKey: "Show Shortcuts",
+    },
   },
   Export: {
     Title: "Export Messages",
@@ -286,6 +311,14 @@ const en: LocaleType = {
       NoAccess: "Enter API Key to check balance",
     },
     Access: {
+      SaasStart: {
+        Title: "Use NextGpt AI",
+        Label: " (Most Cost-Effective Option)",
+        SubTitle:
+          "Maintained by NextGpt, zero setup needed, unlock OpenAI o1, GPT-4o," +
+          " Claude-3.5 and more",
+        ChatNow: "Start Now",
+      },
       AccessCode: {
         Title: "Access Code",
         SubTitle: "Access control Enabled",
@@ -446,7 +479,7 @@ const en: LocaleType = {
         ApiKey: {
           Title: "API Key",
           SubTitle: "Obtain your API Key from Google AI",
-          Placeholder: "Enter your Google AI Studio API Key",
+          Placeholder: "Google AI API Key",
         },
 
         Endpoint: {
@@ -466,6 +499,10 @@ const en: LocaleType = {
     },
 
     Model: "Model",
+    CompressModel: {
+      Title: "Compression Model",
+      SubTitle: "Model used to compress history",
+    },
     Temperature: {
       Title: "Temperature",
       SubTitle: "A larger value makes the more random output",
@@ -487,6 +524,27 @@ const en: LocaleType = {
       Title: "Frequency Penalty",
       SubTitle:
         "A larger value decreasing the likelihood to repeat the same line",
+    },
+    TTS: {
+      Enable: {
+        Title: "Enable TTS",
+        SubTitle: "Enable text-to-speech service",
+      },
+      Autoplay: {
+        Title: "Enable Autoplay",
+        SubTitle:
+          "Automatically generate speech and play, you need to enable the text-to-speech switch first",
+      },
+      Model: "Model",
+      Voice: {
+        Title: "Voice",
+        SubTitle: "The voice to use when generating the audio",
+      },
+      Speed: {
+        Title: "Speed",
+        SubTitle: "The speed of the generated audio",
+      },
+      Engine: "TTS Engine",
     },
   },
   Store: {
@@ -517,10 +575,6 @@ const en: LocaleType = {
     Clear: "Context Cleared",
     Revert: "Revert",
   },
-  Plugin: {
-    Name: "Plugin",
-    Artifacts: "Artifacts",
-  },
   Discovery: {
     Name: "Discovery",
   },
@@ -540,6 +594,47 @@ const en: LocaleType = {
     },
     Item: {
       View: "View",
+    },
+  },
+  Plugin: {
+    Name: "Plugin",
+    Page: {
+      Title: "Plugins",
+      SubTitle: (count: number) => `${count} plugins`,
+      Search: "Search Plugin",
+      Create: "Create",
+      Find: "You can find awesome plugins on github: ",
+    },
+    Item: {
+      Info: (count: number) => `${count} method`,
+      View: "View",
+      Edit: "Edit",
+      Delete: "Delete",
+      DeleteConfirm: "Confirm to delete?",
+    },
+    Auth: {
+      None: "None",
+      Basic: "Basic",
+      Bearer: "Bearer",
+      Custom: "Custom",
+      CustomHeader: "Parameter Name",
+      Token: "Token",
+      Proxy: "Using Proxy",
+      ProxyDescription: "Using proxies to solve CORS error",
+      Location: "Location",
+      LocationHeader: "Header",
+      LocationQuery: "Query",
+      LocationBody: "Body",
+    },
+    EditModal: {
+      Title: (readonly: boolean) =>
+        `Edit Plugin ${readonly ? "(readonly)" : ""}`,
+      Download: "Download",
+      Auth: "Authentication Type",
+      Content: "OpenAPI Schema",
+      Load: "Load From URL",
+      Method: "Method",
+      Error: "OpenAPI Schema Error",
     },
   },
   Mask: {
@@ -575,6 +670,10 @@ const en: LocaleType = {
       HideContext: {
         Title: "Hide Context Prompts",
         SubTitle: "Do not show in-context prompts in chat",
+      },
+      Artifacts: {
+        Title: "Enable Artifacts",
+        SubTitle: "Can render HTML page when enable artifacts.",
       },
       Share: {
         Title: "Share This Mask",

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { ChatMessage, ModelType, useAppConfig, useChatStore } from "../store";
+import { ChatMessage, useAppConfig, useChatStore } from "../store";
 import Locale from "../locales";
 import styles from "./exporter.module.scss";
 import {
@@ -539,9 +539,9 @@ export function ImagePreviewer(props: {
           </div>
 
           <div>
-            <div className={styles["main-title"]}>NextGPT</div>
+            <div className={styles["main-title"]}>NextGpt</div>
             <div className={styles["sub-title"]}>
-              github.com/khulnasoft/NextGPT
+              github.com/KhulnaSoft/NextGPT
             </div>
             <div className={styles["icons"]}>
               <ExportAvatar avatar={config.avatar} />

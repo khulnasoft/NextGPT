@@ -8,8 +8,8 @@
     "withGlobalTauri": true
   },
   "package": {
-    "productName": "NextGPT",
-    "version": "2.14.2"
+    "productName": "NextGpt",
+    "version": "2.15.3"
   },
   "tauri": {
     "allowlist": {
@@ -50,12 +50,17 @@
       },
       "notification": {
         "all": true
+      },
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": ["https://*", "http://*"]
       }
     },
     "bundle": {
       "active": true,
       "category": "DeveloperTool",
-      "copyright": "2023, KhulnaSoft Ltd All Rights Reserved.",
+      "copyright": "2023, Zhang Yifei All Rights Reserved.",
       "deb": {
         "depends": []
       },
@@ -68,7 +73,7 @@
         "icons/icon.ico"
       ],
       "identifier": "com.yida.chatgpt.next.web",
-      "longDescription": "NextGPT is a cross-platform ChatGPT client, including Web/Win/Linux/OSX/PWA.",
+      "longDescription": "NextGpt is a cross-platform ChatGPT client, including Web/Win/Linux/OSX/PWA.",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "",
@@ -77,7 +82,7 @@
         "signingIdentity": null
       },
       "resources": [],
-      "shortDescription": "NextGPT App",
+      "shortDescription": "NextGpt App",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
@@ -92,7 +97,7 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://github.com/khulnasoft/NextGPT/releases/latest/download/latest.json"
+        "https://github.com/KhulnaSoft/NextGPT/releases/latest/download/latest.json"
       ],
       "dialog": false,
       "windows": {
@@ -105,7 +110,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "NextGPT",
+        "title": "NextGpt",
         "width": 960,
         "hiddenTitle": true,
         "titleBarStyle": "Overlay"
