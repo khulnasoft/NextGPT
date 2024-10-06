@@ -3,7 +3,7 @@ services:
   nextgpt:
     profiles: [ "no-proxy" ]
     container_name: nextgpt
-    image: yidadaa/nextgpt
+    image: khulnasoft/nextgpt
     ports:
       - 3000:3000
     environment:
@@ -21,7 +21,7 @@ services:
   nextgpt-proxy:
     profiles: [ "proxy" ]
     container_name: nextgpt-proxy
-    image: yidadaa/nextgpt
+    image: khulnasoft/nextgpt
     ports:
       - 3000:3000
     environment:
