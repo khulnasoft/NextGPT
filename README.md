@@ -352,10 +352,6 @@ If your proxy needs password, use:
 bash <(curl -s https://raw.githubusercontent.com/KhulnaSoft/NextGPT/main/scripts/setup.sh)
 ```
 
-## Synchronizing Chat Records (UpStash)
-
-| [简体中文](./docs/synchronise-chat-logs-cn.md) | [English](./docs/synchronise-chat-logs-en.md) | [Italiano](./docs/synchronise-chat-logs-es.md) | [日本語](./docs/synchronise-chat-logs-ja.md) | [한국어](./docs/synchronise-chat-logs-ko.md)
-
 ## Documentation
 
 > Please go to the [docs][./docs] directory for more documentation instructions.
