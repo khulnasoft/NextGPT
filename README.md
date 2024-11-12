@@ -75,7 +75,7 @@ For enterprise inquiries, please contact: **business@nextgpt.khulnasoft.com**
 
 ## What's New
 
-- 🚀 v2.15.0 Now supports Plugins! Read this: [NextGpt-Awesome-Plugins](https://github.com/KhulnaSoft/NextGpt-Awesome-Plugins)
+- 🚀 v2.15.0 Now supports Plugins! Read this: [NextGPT-Plugin](https://github.com/khulnasoft-lab/NextGPT-Plugin)
 - 🚀 v2.14.0 Now supports  Artifacts & SD 
 - 🚀 v2.10.1 support Google Gemini Pro model.
 - 🚀 v2.9.11 you can use azure endpoint now.

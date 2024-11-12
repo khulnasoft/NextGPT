@@ -60,7 +60,7 @@
     "bundle": {
       "active": true,
       "category": "DeveloperTool",
-      "copyright": "2023, Zhang Yifei All Rights Reserved.",
+      "copyright": "2024, KhulnaSoft Ltd All Rights Reserved.",
       "deb": {
         "depends": []
       },
@@ -72,7 +72,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.yida.chatgpt.next.web",
+      "identifier": "com.khulnasoft.nextgpt.web",
       "longDescription": "NextGpt is a cross-platform ChatGPT client, including Web/Win/Linux/OSX/PWA.",
       "macOS": {
         "entitlements": null,
@@ -97,7 +97,7 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web/releases/latest/download/latest.json"
+        "https://github.com/khulnasoft/NextGPT/releases/latest/download/latest.json"
       ],
       "dialog": true,
       "windows": {
