@@ -9,7 +9,7 @@
   },
   "package": {
     "productName": "NextGpt",
-    "version": "2.15.3"
+    "version": "2.15.8"
   },
   "tauri": {
     "allowlist": {
@@ -60,7 +60,7 @@
     "bundle": {
       "active": true,
       "category": "DeveloperTool",
-      "copyright": "2023, KhulnaSoft Ltd All Rights Reserved.",
+      "copyright": "2023, Zhang Yifei All Rights Reserved.",
       "deb": {
         "depends": []
       },
@@ -97,9 +97,9 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://github.com/KhulnaSoft/NextGPT/releases/latest/download/latest.json"
+        "https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web/releases/latest/download/latest.json"
       ],
-      "dialog": false,
+      "dialog": true,
       "windows": {
         "installMode": "passive"
       },
