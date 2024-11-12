@@ -26,11 +26,16 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const { data } = await github.rest.repos.getLatestRelease({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-            })
-            return data.id
+            try {
+              const { data } = await github.rest.repos.getLatestRelease({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+              })
+              return data.id
+            } catch (error) {
+              console.log("No existing release found, proceeding with a new release.");
+              return '';
+            }
 
   build-tauri:
     needs: create-release
