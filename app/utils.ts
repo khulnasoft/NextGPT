@@ -7,6 +7,20 @@ import { useAccessStore } from "./store";
 // import { fetch as tauriFetch, ResponseType } from "@tauri-apps/api/http";
 import { fetch as tauriStreamFetch } from "./utils/stream";
 
+/**
+ * Trims punctuation and quotes from the start and end of a topic string.
+ *
+ * @remarks
+ * Specifically designed to handle issues with quote and punctuation removal in the Indonesian language.
+ * Removes double quotes, asterisks, and various punctuation marks from both beginning and end of the string.
+ *
+ * @param topic - The input string to be trimmed
+ * @returns The cleaned string with punctuation and quotes removed
+ *
+ * @example
+ * trimTopic('"Hello, world!"') // Returns: "Hello, world"
+ * trimTopic('Topic。') // Returns: "Topic"
+ */
 export function trimTopic(topic: string) {
   // Fix an issue where double quotes still show in the Indonesian language
   // This will remove the specified punctuation from the end of the string
@@ -252,6 +266,22 @@ export function getMessageImages(message: RequestMessage): string[] {
   return urls;
 }
 
+/**
+ * Determines if a given model supports vision capabilities.
+ *
+ * @remarks
+ * Checks model name against predefined vision-related keywords and specific conditions.
+ * Excludes certain models that should not be considered vision models.
+ *
+ * @param model - The name of the AI model to check
+ * @returns A boolean indicating whether the model supports vision features
+ *
+ * @example
+ * ```typescript
+ * isVisionModel('gpt-4-vision-preview') // returns true
+ * isVisionModel('gpt-3.5-turbo') // returns false
+ * ```
+ */
 export function isVisionModel(model: string) {
   const visionModels = useAccessStore.getState().visionModels;
   const envVisionModels = visionModels
