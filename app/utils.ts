@@ -3,6 +3,7 @@ import { showToast } from "./components/ui-lib";
 import Locale from "./locales";
 import { RequestMessage } from "./client/api";
 import { ServiceProvider } from "./constant";
+import { useAccessStore } from "./store";
 // import { fetch as tauriFetch, ResponseType } from "@tauri-apps/api/http";
 import { fetch as tauriStreamFetch } from "./utils/stream";
 
@@ -252,6 +253,8 @@ export function getMessageImages(message: RequestMessage): string[] {
 }
 
 export function isVisionModel(model: string) {
+  const visionModels = useAccessStore.getState().visionModels;
+  const envVisionModels = visionModels
   // Note: This is a better way using the TypeScript feature instead of `&&` or `||` (ts v5.5.0-dev.20240314 I've been using)
 
   const excludeKeywords = ["claude-3-5-haiku-20241022"];
