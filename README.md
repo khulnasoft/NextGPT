@@ -362,8 +362,8 @@ bash <(curl -s https://raw.githubusercontent.com/KhulnaSoft/NextGPT/main/scripts
 - [Deploy with cloudflare (Deprecated)](./docs/cloudflare-pages-en.md)
 - [Frequent Ask Questions](./docs/faq-en.md)
 - [How to add a new translation](./docs/translation.md)
-- [How to use Vercel (No English)](./docs/vercel-bn.md)
-- [User Manual (Only Chinese, WIP)](./docs/user-manual-bn.md)
+- [How to use Vercel (Bengali)](./docs/vercel-bn.md)
+- [User Manual (Bengali)](./docs/user-manual-bn.md)
 
 ## Screenshots
 
