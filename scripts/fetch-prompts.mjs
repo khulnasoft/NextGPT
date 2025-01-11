@@ -5,7 +5,7 @@ const RAW_FILE_URL = "https://raw.githubusercontent.com/";
 const MIRRORF_FILE_URL = "http://raw.fgit.ml/";
 
 const RAW_BN_URL =
-  "banglawiki/awesome-chatgpt-bangla-prompts/blob/main/prompts.csv";
+  "banglawiki/awesome-chatgpt-bangla-prompts/raw/main/prompts.csv";
 const BN_URL = MIRRORF_FILE_URL + RAW_BN_URL;
 const RAW_TW_URL = "PlexPt/awesome-chatgpt-prompts-zh/main/prompts-zh-TW.json";
 const TW_URL = MIRRORF_FILE_URL + RAW_TW_URL;
