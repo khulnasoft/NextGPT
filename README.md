@@ -133,7 +133,7 @@ After adding or modifying this environment variable, please redeploy the project
 
 ## Environment Variables
 
-> [简体中文 > 如何配置 api key、访问密码、接口代理](./README_CN.md#环境变量)
+> [বাংলা > কিভাবে API key, অ্যাক্সেস পাসওয়ার্ড এবং API প্রক্সি কনফিগার করবেন](./README_BN.md#পরিবেশ-ভেরিয়েবলস)
 
 ### `CODE` (optional)
 
