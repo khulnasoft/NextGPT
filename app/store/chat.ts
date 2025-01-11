@@ -207,17 +207,17 @@ export const useChatStore = createPersistStore(
 
     const methods = {
       forkSession() {
-        // 获取当前会话
+        // বর্তমান সেশনটি পান
         const currentSession = get().currentSession();
         if (!currentSession) return;
 
         const newSession = createEmptySession();
 
         newSession.topic = currentSession.topic;
-        // 深拷贝消息
+        // মেসেজগুলি গভীরভাবে অনুলিপি করুন
         newSession.messages = currentSession.messages.map((msg) => ({
           ...msg,
-          id: nanoid(), // 生成新的消息 ID
+          // নতুন বার্তার আইডি তৈরি করুন
         }));
         newSession.mask = {
           ...currentSession.mask,

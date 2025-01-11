@@ -19,18 +19,19 @@ Bifurca el proyecto en Github, luego inicia sesión en dash.cloudflare.com y ve 
 10. No modifique el "Directorio raíz".
 11. Para "Variables de entorno", haga clic en ">" y luego haga clic en "Agregar variable". Rellene la siguiente información:
 
-    *   `NODE_VERSION=20.1`
-    *   `NEXT_TELEMETRY_DISABLE=1`
-    *   `OPENAI_API_KEY=你自己的API Key`
-    *   `YARN_VERSION=1.22.19`
-    *   `PHP_VERSION=7.4`
+    - `NODE_VERSION=20.1`
+    - `NEXT_TELEMETRY_DISABLE=1`
+    - `OPENAI_API_KEY=你自己的API Key`
+    - `YARN_VERSION=1.22.19`
+    - `PHP_VERSION=7.4`
 
     Dependiendo de sus necesidades reales, puede completar opcionalmente las siguientes opciones:
 
-    *   `CODE= 可选填，访问密码，可以使用逗号隔开多个密码`
-    *   `OPENAI_ORG_ID= 可选填，指定 OpenAI 中的组织 ID`
-    *   `HIDE_USER_API_KEY=1 可选，不让用户自行填入 API Key`
-    *   `DISABLE_GPT4=1 可选，不让用户使用 GPT-4`
+    - `CODE= 可选填，访问密码，可以使用逗号隔开多个密码`
+    - `OPENAI_ORG_ID= 可选填，指定 OpenAI 中的组织 ID`
+    - `HIDE_USER_API_KEY=1 可选，不让用户自行填入 API Key`
+    - `DISABLE_GPT4=1 可选，不让用户使用 GPT-4`
+
 12. Haga clic en "Guardar e implementar".
 13. Haga clic en "Cancelar implementación" porque necesita rellenar los indicadores de compatibilidad.
 14. Vaya a "Configuración de compilación", "Funciones" y busque "Indicadores de compatibilidad".

@@ -1,10 +1,10 @@
-import { getClientConfig } from "../config/client";
 import { SubmitKey } from "../store/config";
+import type { PartialLocaleType } from "./index";
+import { getClientConfig } from "../config/client";
 import { SAAS_CHAT_UTM_URL } from "@/app/constant";
-
 const isApp = !!getClientConfig()?.isApp;
 
-const cn = {
+const cn: PartialLocaleType = {
   WIP: "该功能仍在开发中……",
   Error: {
     Unauthorized: isApp
@@ -836,14 +836,5 @@ const cn = {
     Detail: "详情",
   },
 };
-
-type DeepPartial<T> = T extends object
-  ? {
-      [P in keyof T]?: DeepPartial<T[P]>;
-    }
-  : T;
-
-export type LocaleType = typeof cn;
-export type PartialLocaleType = DeepPartial<typeof cn>;
 
 export default cn;

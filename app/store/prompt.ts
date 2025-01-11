@@ -160,7 +160,7 @@ export const usePromptStore = createPersistStore(
         .then((res) => res.json())
         .then((res) => {
           let fetchPrompts = [res.en, res.tw, res.cn];
-          if (getLang() === "cn") {
+          if (getLang() === "bn") {
             fetchPrompts = fetchPrompts.reverse();
           }
           const builtinPrompts = fetchPrompts.map((promptList: PromptList) => {
