@@ -7,7 +7,7 @@
 
 ## 一键安装
 ![bt-install-1](./images/bt/bt-install-1.jpeg)
-1. 在 宝塔面板 -> Docker -> 应用商店 页面，搜索 ChatGPT-Next-Web 找到本项目的docker应用；
+1. 在 宝塔面板 -> Docker -> 应用商店 页面，搜索 NextGPT 找到本项目的docker应用；
 2. 点击 安装 开始部署本项目
 
 ![bt-install-2](./images/bt/bt-install-2.jpeg)
@@ -19,7 +19,7 @@
 
 ## 如何访问
 ![bt-install-3](./images/bt/bt-install-3.jpeg)
-通过根据 服务器IP地址 和配置的 web端口 http://$(host):$(port)，在浏览器中打开 ChatGPT-Next-Web。
+通过根据 服务器IP地址 和配置的 web端口 http://$(host):$(port)，在浏览器中打开 NextGPT。
 
 ![bt-install-4](./images/bt/bt-install-4.jpeg)
 若配置了 访问权限密码，访问大模型前需要登录，请点击 登录，获取访问权限。

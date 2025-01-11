@@ -28,7 +28,7 @@ const en: LocaleType = {
     Later: "Later",
     SaasTips: "Too Complex, Use Immediately Now",
     TopTips:
-      "🥳 NextGpt AI launch promotion: Instantly unlock the latest models like OpenAI o1, GPT-4o, Claude-3.5!",
+      "🥳 NextChat AI launch promotion: Instantly unlock the latest models like OpenAI o1, GPT-4o, Claude-3.5!",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} messages`,
@@ -107,6 +107,7 @@ const en: LocaleType = {
       copyLastMessage: "Copy Last Reply",
       copyLastCode: "Copy Last Code Block",
       showShortcutKey: "Show Shortcuts",
+      clearContext: "Clear Context",
     },
   },
   Export: {
@@ -314,10 +315,10 @@ const en: LocaleType = {
     },
     Access: {
       SaasStart: {
-        Title: "Use NextGpt AI",
+        Title: "Use NextChat AI",
         Label: " (Most Cost-Effective Option)",
         SubTitle:
-          "Maintained by NextGpt, zero setup needed, unlock OpenAI o1, GPT-4o," +
+          "Maintained by NextChat, zero setup needed, unlock OpenAI o1, GPT-4o," +
           " Claude-3.5 and more",
         ChatNow: "Start Now",
       },
@@ -440,6 +441,17 @@ const en: LocaleType = {
           Title: "Moonshot API Key",
           SubTitle: "Use a custom Moonshot API Key",
           Placeholder: "Moonshot API Key",
+        },
+        Endpoint: {
+          Title: "Endpoint Address",
+          SubTitle: "Example: ",
+        },
+      },
+      DeepSeek: {
+        ApiKey: {
+          Title: "DeepSeek API Key",
+          SubTitle: "Use a custom DeepSeek API Key",
+          Placeholder: "DeepSeek API Key",
         },
         Endpoint: {
           Title: "Endpoint Address",
