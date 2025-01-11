@@ -5,7 +5,7 @@ import PowerIcon from "@/app/icons/power.svg";
 import styles from "./realtime-chat.module.scss";
 import clsx from "clsx";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 
 import { useChatStore, createMessage, useAppConfig } from "@/app/store";
 
@@ -56,7 +56,7 @@ export function RealtimeChat({
   const azureDeployment = config.realtimeConfig.azure.deployment;
   const voice = config.realtimeConfig.voice;
 
-  const handleConnect = async () => {
+  const handleConnect = useCallback(async () => {
     if (isConnecting) return;
     if (!isConnected) {
       try {
@@ -116,7 +116,19 @@ export function RealtimeChat({
     } else {
       await disconnect();
     }
-  };
+  }, [
+    isConnecting,
+    isConnected,
+    apiKey,
+    azure,
+    azureEndpoint,
+    azureDeployment,
+    model,
+    modality,
+    useVAD,
+    voice,
+    temperature,
+  ]);
 
   const disconnect = async () => {
     if (clientRef.current) {
@@ -228,7 +240,7 @@ export function RealtimeChat({
     audioHandlerRef.current?.stopStreamingPlayback();
   };
 
-  const toggleRecording = async () => {
+  const toggleRecording = useCallback(async () => {
     if (!isRecording && clientRef.current) {
       try {
         if (!audioHandlerRef.current) {
@@ -255,7 +267,7 @@ export function RealtimeChat({
         console.error("Failed to stop recording:", error);
       }
     }
-  };
+  }, [isRecording, clientRef, useVAD]);
 
   useEffect(() => {
     // 防止重复初始化
@@ -282,7 +294,7 @@ export function RealtimeChat({
       audioHandlerRef.current?.close().catch(console.error);
       disconnect();
     };
-  }, []);
+  }, [handleConnect, isRecording, toggleRecording]);
 
   useEffect(() => {
     let animationFrameId: number;
