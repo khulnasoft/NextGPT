@@ -1,6 +1,6 @@
 import { BuiltinMask } from "./typing";
 
-export const BN_MASKS: BuiltinMask[] = [
+export const TW_MASKS: BuiltinMask[] = [
   {
     avatar: "1f5bc-fe0f",
     name: "টেক্সট থেকে ছবি",
