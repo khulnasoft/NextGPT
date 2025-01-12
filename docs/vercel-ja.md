@@ -13,7 +13,7 @@
 ![vercel-create-2](./images/vercel/vercel-create-2.jpg)
 
 1.  Git リポジトリのインポートで、nextgpt を検索します;
-2  .新しいフォークプロジェクトを選択し、インポートをクリックします。
+    2 .新しいフォークプロジェクトを選択し、インポートをクリックします。
 
 ![vercel-create-3](./images/vercel/vercel-create-3.jpg)
 

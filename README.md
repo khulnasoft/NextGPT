@@ -21,7 +21,7 @@ One-Click to get a well-designed cross-platform ChatGPT web UI, with GPT3, GPT4 
 [MacOS-image]: https://img.shields.io/badge/-MacOS-black?logo=apple
 [Linux-image]: https://img.shields.io/badge/-Linux-333?logo=ubuntu
 
-[<img src="https://vercel.com/button" alt="Deploy on Zeabur" height="30">](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FKhulnaSoft%2FNextGPT&env=OPENAI_API_KEY&env=CODE&project-name=nextgpt&repository-name=NextGpt) [<img src="https://zeabur.com/button.svg" alt="Deploy on Zeabur" height="30">](https://zeabur.com/templates/ZBUEFA)  [<img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod" height="30">](https://gitpod.io/#https://github.com/KhulnaSoft/NextGPT)
+[<img src="https://vercel.com/button" alt="Deploy on Zeabur" height="30">](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FKhulnaSoft%2FNextGPT&env=OPENAI_API_KEY&env=CODE&project-name=nextgpt&repository-name=NextGpt) [<img src="https://zeabur.com/button.svg" alt="Deploy on Zeabur" height="30">](https://zeabur.com/templates/ZBUEFA) [<img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod" height="30">](https://gitpod.io/#https://github.com/KhulnaSoft/NextGPT)
 
 [<img src="https://github.com/user-attachments/assets/903482d4-3e87-4134-9af1-f2588fa90659" height="60" width="288" >](https://monica.im/?utm=nxcrp)
 
@@ -30,6 +30,7 @@ One-Click to get a well-designed cross-platform ChatGPT web UI, with GPT3, GPT4 
 ## Enterprise Edition
 
 Meeting Your Company's Privatization and Customization Deployment Requirements:
+
 - **Brand Customization**: Tailored VI/UI to seamlessly align with your corporate brand image.
 - **Resource Integration**: Unified configuration and management of dozens of AI resources by company administrators, ready for use by team members.
 - **Permission Control**: Clearly defined member permissions, resource permissions, and knowledge base permissions, all controlled via a corporate-grade Admin Panel.
@@ -38,7 +39,7 @@ Meeting Your Company's Privatization and Customization Deployment Requirements:
 - **Private Deployment**: Enterprise-level private deployment supporting various mainstream private cloud solutions, ensuring data security and privacy protection.
 - **Continuous Updates**: Ongoing updates and upgrades in cutting-edge capabilities like multimodal AI, ensuring consistent innovation and advancement.
 
-For enterprise inquiries, please contact: **business@nextgpt.khulnasoft.com**
+For enterprise inquiries, please contact: **business@khulnasoft.com**
 
 <img width="300" src="https://github.com/user-attachments/assets/3daeb7b6-ab63-4542-9141-2e4a12c80601">
 
@@ -76,13 +77,12 @@ For enterprise inquiries, please contact: **business@nextgpt.khulnasoft.com**
 ## What's New
 
 - 🚀 v2.15.0 Now supports Plugins! Read this: [NextGPT-Plugin](https://github.com/khulnasoft-lab/NextGPT-Plugin)
-- 🚀 v2.14.0 Now supports  Artifacts & SD 
+- 🚀 v2.14.0 Now supports Artifacts & SD
 - 🚀 v2.10.1 support Google Gemini Pro model.
 - 🚀 v2.9.11 you can use azure endpoint now.
 - 🚀 v2.8 now we have a client that runs across all platforms!
 - 🚀 v2.7 let's share conversations as image, or share to ShareGPT!
 - 🚀 v2.0 is released, now you can create prompt templates, turn your ideas into reality! Read this: [ChatGPT Prompt Engineering Tips: Zero, One and Few Shot Prompting](https://www.allabtai.com/prompt-engineering-tips-zero-one-and-few-shot-prompting/).
-
 
 ## Get Started
 
@@ -103,7 +103,7 @@ We recommend that you follow the steps below to re-deploy:
 
 - Delete the original repository;
 - Use the fork button in the upper right corner of the page to fork this project;
-- Choose and deploy in Vercel again, [please see the detailed tutorial](./docs/vercel-cn.md).
+- Choose and deploy in Vercel again, [please see the detailed tutorial](./docs/vercel-bn.md).
 
 ### Enable Automatic Updates
 
@@ -133,7 +133,7 @@ After adding or modifying this environment variable, please redeploy the project
 
 ## Environment Variables
 
-> [简体中文 > 如何配置 api key、访问密码、接口代理](./README_CN.md#环境变量)
+> [বাংলা > কিভাবে API key, অ্যাক্সেস পাসওয়ার্ড এবং API প্রক্সি কনফিগার করবেন](./README_BN.md#পরিবেশ-ভেরিয়েবলস)
 
 ### `CODE` (optional)
 
@@ -263,10 +263,12 @@ To control custom models, use `+` to add a custom model, use `-` to hide a model
 User `-all` to disable all default models, `+all` to enable all default models.
 
 For Azure: use `modelName@azure=deploymentName` to customize model name and deployment name.
+
 > Example: `+gpt-3.5-turbo@azure=gpt35` will show option `gpt35(Azure)` in model list.
 > If you only can use Azure model, `-all,+gpt-3.5-turbo@azure=gpt35` will `gpt35(Azure)` the only option in model list.
 
 For ByteDance: use `modelName@bytedance=deploymentName` to customize model name and deployment name.
+
 > Example: `+Doubao-lite-4k@bytedance=ep-xxxxx-xxx` will show option `Doubao-lite-4k(ByteDance)` in model list.
 
 ### `DEFAULT_MODEL` （optional）
@@ -276,8 +278,9 @@ Change default model
 ### `WHITE_WEBDAV_ENDPOINTS` (optional)
 
 You can use this option if you want to increase the number of webdav service addresses you are allowed to access, as required by the format：
-- Each address must be a complete endpoint 
-> `https://xxxx/yyy`
+
+- Each address must be a complete endpoint
+  > `https://xxxx/yyy`
 - Multiple addresses are connected by ', '
 
 ### `DEFAULT_INPUT_TEMPLATE` (optional)
@@ -359,8 +362,8 @@ bash <(curl -s https://raw.githubusercontent.com/KhulnaSoft/NextGPT/main/scripts
 - [Deploy with cloudflare (Deprecated)](./docs/cloudflare-pages-en.md)
 - [Frequent Ask Questions](./docs/faq-en.md)
 - [How to add a new translation](./docs/translation.md)
-- [How to use Vercel (No English)](./docs/vercel-cn.md)
-- [User Manual (Only Chinese, WIP)](./docs/user-manual-cn.md)
+- [How to use Vercel (Bengali)](./docs/vercel-bn.md)
+- [User Manual (Bengali)](./docs/user-manual-bn.md)
 
 ## Screenshots
 

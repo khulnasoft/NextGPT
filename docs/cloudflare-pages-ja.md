@@ -1,6 +1,7 @@
 # Cloudflare Pages 導入ガイド
 
 ## 新規プロジェクトの作成方法
+
 GitHub でこのプロジェクトをフォークし、dash.cloudflare.com にログインして Pages にアクセスします。
 
 1. "Create a project" をクリックする。
@@ -11,12 +12,13 @@ GitHub でこのプロジェクトをフォークし、dash.cloudflare.com に�
 6. "Project name" と "Production branch" はデフォルト値を使用するか、必要に応じて変更してください。
 7. "Build Settings" で、"Framework presets" オプションを選択し、"Next.js" を選択します。
 8. node:buffer のバグのため、デフォルトの "Build command" は使用しないでください。代わりに、以下のコマンドを使用してください:
-    ```
-    npx @cloudflare/next-on-pages --experimental-minify
-    ```
+   ```
+   npx @cloudflare/next-on-pages --experimental-minify
+   ```
 9. "Build output directory" はデフォルト値を使用し、変更しない。
 10. "Root Directory" を変更しない。
 11. "Environment variables" は、">" をクリックし、"Add variable" をクリックします。そして以下の情報を入力します:
+
     - `NODE_VERSION=20.1`
     - `NEXT_TELEMETRY_DISABLE=1`
     - `OPENAI_API_KEY=your_own_API_key`

@@ -17,7 +17,9 @@
     "prepare": "husky install",
     "proxy-dev": "sh ./scripts/init-proxy.sh && proxychains -f ./scripts/proxychains.conf yarn dev",
     "test": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "lint:fix": "next lint --fix",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@fortaine/fetch-event-source": "^3.0.6",
@@ -61,7 +63,7 @@
     "@tauri-apps/cli": "2.1.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.0.1",
+    "@testing-library/react": "^16.1.0",
     "@types/jest": "^29.5.14",
     "@types/js-yaml": "4.0.9",
     "@types/lodash-es": "^4.17.12",
