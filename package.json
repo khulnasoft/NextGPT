@@ -42,7 +42,7 @@
     "next": "^14.2.21",
     "node-fetch": "^3.3.2",
     "openapi-client-axios": "^7.5.5",
-    "react": "^18.3.1",
+    "react": "^19.0.0",
     "react-dom": "^18.3.1",
     "react-markdown": "^8.0.7",
     "react-router-dom": "^6.15.0",
