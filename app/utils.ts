@@ -286,7 +286,7 @@ export function getMessageImages(message: RequestMessage): string[] {
  * ```
  */
 export function isVisionModel(model: string) {
-  const visionModels = useAccessStore.getState().visionModels;
+  const {visionModels} = useAccessStore.getState();
   const envVisionModels = visionModels
   // Note: This is a better way using the TypeScript feature instead of `&&` or `||` (ts v5.5.0-dev.20240314 I've been using)
 
