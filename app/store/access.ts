@@ -147,9 +147,10 @@ export const useAccessStore = createPersistStore(
       return get().needCode;
     },
     getVisionModels() {
-      this.fetch();
-      return get().visionModels;
-    },
+       this.fetch();
+       return get().visionModels;
+     },
+
     edgeVoiceName() {
       this.fetch();
 
