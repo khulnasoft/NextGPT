@@ -28,7 +28,7 @@ const no: PartialLocaleType = {
     SaasTips:
       "Konfigurasjonen er for komplisert, jeg vil bruke det med en gang",
     TopTips:
-      "🥳 NextGpt AI lanseringstilbud, lås opp OpenAI o1, GPT-4o, Claude-3.5 og de nyeste store modellene nå",
+      "🥳 NextGPT AI lanseringstilbud, lås opp OpenAI o1, GPT-4o, Claude-3.5 og de nyeste store modellene nå",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} samtaler`,
@@ -300,10 +300,10 @@ const no: PartialLocaleType = {
 
     Access: {
       SaasStart: {
-        Title: "Bruk NextGpt AI",
+        Title: "Bruk NextGPT AI",
         Label: "(Den mest kostnadseffektive løsningen)",
         SubTitle:
-          "Offisielt vedlikeholdt av NextGpt, klar til bruk uten konfigurasjon, støtter de nyeste store modellene som OpenAI o1, GPT-4o og Claude-3.5",
+          "Offisielt vedlikeholdt av NextGPT, klar til bruk uten konfigurasjon, støtter de nyeste store modellene som OpenAI o1, GPT-4o og Claude-3.5",
         ChatNow: "Chat nå",
       },
 

@@ -33,11 +33,11 @@ Docker 版本相当于稳定版，latest Docker 总是与 latest release version
 这是你自定义的访问密码，你可以选择：
 
 1. 不设置，删除该环境变量即可。谨慎：此时任何人可以访问你的项目。
-2. 部署项目时，设置环境变量 CODE（支持多个密码逗号分隔）。设置访问密码后，用户需要在设置界面输入访问密码才可以使用。参见[相关说明](https://github.com/Yidadaa/ChatGPT-Next-Web/blob/main/README_CN.md#%E9%85%8D%E7%BD%AE%E9%A1%B5%E9%9D%A2%E8%AE%BF%E9%97%AE%E5%AF%86%E7%A0%81)
+2. 部署项目时，设置环境变量 CODE（支持多个密码逗号分隔）。设置访问密码后，用户需要在设置界面输入访问密码才可以使用。参见[相关说明](https://github.com/KhulnaSoft/NextGPT/blob/main/README_CN.md#%E9%85%8D%E7%BD%AE%E9%A1%B5%E9%9D%A2%E8%AE%BF%E9%97%AE%E5%AF%86%E7%A0%81)
 
 ## 为什么我部署的版本没有流式响应
 
-> 相关讨论：[#386](https://github.com/Yidadaa/ChatGPT-Next-Web/issues/386)
+> 相关讨论：[#386](https://github.com/KhulnaSoft/NextGPT/issues/386)
 
 如果你使用 nginx 反向代理，需要在配置文件中增加下列代码：
 
@@ -80,7 +80,7 @@ keepalive_timeout 300;  # 设定keep-alive超时时间为65秒
 
 ## 为什么 docker 部署后出现网络错误？
 
-详见讨论：https://github.com/Yidadaa/ChatGPT-Next-Web/issues/1569
+详见讨论：https://github.com/KhulnaSoft/NextGPT/issues/1569
 
 # 使用相关问题
 
@@ -123,6 +123,7 @@ API KEY 有问题。余额不足。
 注意，关闭此特性后，用户会在第一次访问网站时加载所有资源，如果用户网络状况较差，可能会引起较长时间的白屏，从而影响用户使用体验，所以自行考虑。
 
 ## 使用时遇到 "NotFoundError: Failed to execute 'removeChild' on 'Node': The node...."
+
 请关闭浏览器自身的自动翻译功能，并关闭所有自动翻译插件。
 
 # 网络服务相关问题
@@ -195,11 +196,11 @@ OpenAI 只接受指定地区的信用卡（中国信用卡无法使用）。一�
 
 ## 如何使用 Azure OpenAI 接口
 
-请参考：[#371](https://github.com/Yidadaa/ChatGPT-Next-Web/issues/371)
+请参考：[#371](https://github.com/KhulnaSoft/NextGPT/issues/371)
 
 ## 为什么我的 Token 消耗得这么快？
 
-> 相关讨论：[#518](https://github.com/Yidadaa/ChatGPT-Next-Web/issues/518)
+> 相关讨论：[#518](https://github.com/KhulnaSoft/NextGPT/issues/518)
 
 - 如果你有 GPT 4 的权限，并且日常在使用 GPT 4 api，那么由于 GPT 4 价格是 GPT 3.5 的 15 倍左右，你的账单金额会急速膨胀；
 - 如果你在使用 GPT 3.5，并且使用频率并不高，仍然发现自己的账单金额在飞快增加，那么请马上按照以下步骤排查：

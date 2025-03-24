@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   nextgpt:
-    profiles: [ "no-proxy" ]
+    profiles: ["no-proxy"]
     container_name: nextgpt
     image: khulnasoft/nextgpt
     ports:
@@ -19,7 +19,7 @@ services:
       - OPENAI_SB=$OPENAI_SB
 
   nextgpt-proxy:
-    profiles: [ "proxy" ]
+    profiles: ["proxy"]
     container_name: nextgpt-proxy
     image: khulnasoft/nextgpt
     ports:

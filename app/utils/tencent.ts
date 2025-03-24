@@ -1,6 +1,6 @@
 import { sign, hash as getHash, hex } from "./hmac";
 
-// 使用 SHA-256 和 secret 进行 HMAC 加密
+// SHA-256 এবং secret ব্যবহার করে HMAC এনক্রিপশন
 function sha256(message: any, secret: any, encoding?: string) {
   const result = sign(secret, message);
   return encoding == "hex" ? hex(result).toString() : result;
@@ -27,10 +27,10 @@ export async function getHeader(
   const action = "ChatCompletions";
   const version = "2023-09-01";
   const timestamp = Math.floor(Date.now() / 1000);
-  //时间处理, 获取世界时间日期
+  // সময় প্রক্রিয়াকরণ, বিশ্ব সময় তারিখ প্রাপ্তি
   const date = getDate(timestamp);
 
-  // ************* 步骤 1：拼接规范请求串 *************
+  // ************* ধাপ ১: সংযুক্ত করা নিয়মিত অনুরোধ স্ট্রিং *************
 
   const hashedRequestPayload = getHash(payload);
   const httpRequestMethod = "POST";
@@ -56,7 +56,7 @@ export async function getHeader(
     hashedRequestPayload,
   ].join("\n");
 
-  // ************* 步骤 2：拼接待签名字符串 *************
+  // ************* ধাপ ২: স্বাক্ষর করার জন্য স্ট্রিং সংযুক্ত করা *************
   const algorithm = "TC3-HMAC-SHA256";
   const hashedCanonicalRequest = getHash(canonicalRequest);
   const credentialScope = date + "/" + service + "/" + "tc3_request";
@@ -69,13 +69,13 @@ export async function getHeader(
     "\n" +
     hashedCanonicalRequest;
 
-  // ************* 步骤 3：计算签名 *************
+  // ************* ধাপ ৩: স্বাক্ষর গণনা করা *************
   const kDate = sha256(date, "TC3" + SECRET_KEY);
   const kService = sha256(service, kDate);
   const kSigning = sha256("tc3_request", kService);
   const signature = sha256(stringToSign, kSigning, "hex");
 
-  // ************* 步骤 4：拼接 Authorization *************
+  // ************* ধাপ ৪: অনুমোদন সংযুক্ত করা *************
   const authorization =
     algorithm +
     " " +

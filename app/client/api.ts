@@ -20,6 +20,7 @@ import { QwenApi } from "./platforms/alibaba";
 import { HunyuanApi } from "./platforms/tencent";
 import { MoonshotApi } from "./platforms/moonshot";
 import { SparkApi } from "./platforms/iflytek";
+import { DeepSeekApi } from "./platforms/deepseek";
 import { XAIApi } from "./platforms/xai";
 import { ChatGLMApi } from "./platforms/glm";
 
@@ -154,6 +155,9 @@ export class ClientApi {
       case ModelProvider.Iflytek:
         this.llm = new SparkApi();
         break;
+      case ModelProvider.DeepSeek:
+        this.llm = new DeepSeekApi();
+        break;
       case ModelProvider.XAI:
         this.llm = new XAIApi();
         break;
@@ -180,11 +184,10 @@ export class ClientApi {
       .concat([
         {
           from: "human",
-          value:
-            "Share from [NextGpt]: https://github.com/Yidadaa/ChatGPT-Next-Web",
+          value: "Share from [NextGPT]: https://github.com/KhulnaSoft/NextGPT",
         },
       ]);
-    // 敬告二开开发者们，为了开源大模型的发展，请不要修改上述消息，此消息用于后续数据清洗使用
+    // Notice to secondary developers: For the development of open-source large models, please do not modify the above message. This message is used for subsequent data cleaning.
     // Please do not modify this message
 
     console.log("[Share]", messages, msgs);
@@ -247,30 +250,36 @@ export function getHeaders(ignoreHeaders: boolean = false) {
     const isAlibaba = modelConfig.providerName === ServiceProvider.Alibaba;
     const isMoonshot = modelConfig.providerName === ServiceProvider.Moonshot;
     const isIflytek = modelConfig.providerName === ServiceProvider.Iflytek;
+    const isDeepSeek = modelConfig.providerName === ServiceProvider.DeepSeek;
     const isXAI = modelConfig.providerName === ServiceProvider.XAI;
     const isChatGLM = modelConfig.providerName === ServiceProvider.ChatGLM;
     const isEnabledAccessControl = accessStore.enabledAccessControl();
     const apiKey = isGoogle
       ? accessStore.googleApiKey
       : isAzure
-      ? accessStore.azureApiKey
-      : isAnthropic
-      ? accessStore.anthropicApiKey
-      : isByteDance
-      ? accessStore.bytedanceApiKey
-      : isAlibaba
-      ? accessStore.alibabaApiKey
-      : isMoonshot
-      ? accessStore.moonshotApiKey
-      : isXAI
-      ? accessStore.xaiApiKey
-      : isChatGLM
-      ? accessStore.chatglmApiKey
-      : isIflytek
-      ? accessStore.iflytekApiKey && accessStore.iflytekApiSecret
-        ? accessStore.iflytekApiKey + ":" + accessStore.iflytekApiSecret
-        : ""
-      : accessStore.openaiApiKey;
+        ? accessStore.azureApiKey
+        : isAnthropic
+          ? accessStore.anthropicApiKey
+          : isByteDance
+            ? accessStore.bytedanceApiKey
+            : isAlibaba
+              ? accessStore.alibabaApiKey
+              : isMoonshot
+                ? accessStore.moonshotApiKey
+                : isXAI
+                  ? accessStore.xaiApiKey
+                  : isDeepSeek
+                    ? accessStore.deepseekApiKey
+                    : isChatGLM
+                      ? accessStore.chatglmApiKey
+                      : isIflytek
+                        ? accessStore.iflytekApiKey &&
+                          accessStore.iflytekApiSecret
+                          ? accessStore.iflytekApiKey +
+                            ":" +
+                            accessStore.iflytekApiSecret
+                          : ""
+                        : accessStore.openaiApiKey;
     return {
       isGoogle,
       isAzure,
@@ -280,6 +289,7 @@ export function getHeaders(ignoreHeaders: boolean = false) {
       isAlibaba,
       isMoonshot,
       isIflytek,
+      isDeepSeek,
       isXAI,
       isChatGLM,
       apiKey,
@@ -291,10 +301,10 @@ export function getHeaders(ignoreHeaders: boolean = false) {
     return isAzure
       ? "api-key"
       : isAnthropic
-      ? "x-api-key"
-      : isGoogle
-      ? "x-goog-api-key"
-      : "Authorization";
+        ? "x-api-key"
+        : isGoogle
+          ? "x-goog-api-key"
+          : "Authorization";
   }
 
   const {
@@ -302,6 +312,13 @@ export function getHeaders(ignoreHeaders: boolean = false) {
     isAzure,
     isAnthropic,
     isBaidu,
+    isByteDance,
+    isAlibaba,
+    isMoonshot,
+    isIflytek,
+    isDeepSeek,
+    isXAI,
+    isChatGLM,
     apiKey,
     isEnabledAccessControl,
   } = getConfig();
@@ -344,6 +361,8 @@ export function getClientApi(provider: ServiceProvider): ClientApi {
       return new ClientApi(ModelProvider.Moonshot);
     case ServiceProvider.Iflytek:
       return new ClientApi(ModelProvider.Iflytek);
+    case ServiceProvider.DeepSeek:
+      return new ClientApi(ModelProvider.DeepSeek);
     case ServiceProvider.XAI:
       return new ClientApi(ModelProvider.XAI);
     case ServiceProvider.ChatGLM:

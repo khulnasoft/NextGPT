@@ -27,7 +27,7 @@ const tw = {
     Return: "返回",
     SaasTips: "設定太麻煩，想要立即使用",
     TopTips:
-      "🥳 NextGpt AI 首發優惠，立刻解鎖 OpenAI o1, GPT-4o, Claude-3.5 等最新的大型語言模型",
+      "🥳 NextGPT AI 首發優惠，立刻解鎖 OpenAI o1, GPT-4o, Claude-3.5 等最新的大型語言模型",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} 則對話`,
@@ -100,6 +100,7 @@ const tw = {
       copyLastMessage: "複製最後一個回覆",
       copyLastCode: "複製最後一個程式碼區塊",
       showShortcutKey: "顯示快捷方式",
+      clearContext: "清除上下文",
     },
   },
   Export: {
@@ -298,10 +299,10 @@ const tw = {
 
     Access: {
       SaasStart: {
-        Title: "使用 NextGpt AI",
+        Title: "使用 NextGPT AI",
         Label: "(性價比最高的方案)",
         SubTitle:
-          "由 NextGpt 官方維護，無須設定開箱即用，支援 OpenAI o1、GPT-4o、Claude-3.5 等最新的大型語言模型",
+          "由 NextGPT 官方維護，無須設定開箱即用，支援 OpenAI o1、GPT-4o、Claude-3.5 等最新的大型語言模型",
         ChatNow: "立刻開始對話",
       },
 
@@ -485,7 +486,7 @@ const tw = {
     },
   },
   SearchChat: {
-    Name: "搜尋",
+    Name: "搜尋聊天記錄",
     Page: {
       Title: "搜尋聊天記錄",
       Search: "輸入搜尋關鍵詞",

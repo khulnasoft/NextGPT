@@ -541,9 +541,9 @@ export function ImagePreviewer(props: {
           </div>
 
           <div>
-            <div className={styles["main-title"]}>NextGpt</div>
+            <div className={styles["main-title"]}>NextGPT</div>
             <div className={styles["sub-title"]}>
-              github.com/khulnasoft/NextGPT
+              github.com/KhulnaSoft/NextGPT
             </div>
             <div className={styles["icons"]}>
               <ExportAvatar avatar={config.avatar} />

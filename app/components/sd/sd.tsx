@@ -101,7 +101,7 @@ export function Sd() {
 
   useEffect(() => {
     setSdImages(sdStore.draw);
-  }, [sdStore.currentId]);
+  }, [sdStore.draw]);
 
   return (
     <>
