@@ -3,12 +3,27 @@ import { showToast } from "./components/ui-lib";
 import Locale from "./locales";
 import { RequestMessage } from "./client/api";
 import { ServiceProvider } from "./constant";
+import { useAccessStore } from "./store";
 // import { fetch as tauriFetch, ResponseType } from "@tauri-apps/api/http";
 import { fetch as tauriStreamFetch } from "./utils/stream";
 import { VISION_MODEL_REGEXES, EXCLUDE_VISION_MODEL_REGEXES } from "./constant";
 import { useAccessStore } from "./store";
 import { ModelSize } from "./typing";
 
+/**
+ * Trims punctuation and quotes from the start and end of a topic string.
+ *
+ * @remarks
+ * Specifically designed to handle issues with quote and punctuation removal in the Indonesian language.
+ * Removes double quotes, asterisks, and various punctuation marks from both beginning and end of the string.
+ *
+ * @param topic - The input string to be trimmed
+ * @returns The cleaned string with punctuation and quotes removed
+ *
+ * @example
+ * trimTopic('"Hello, world!"') // Returns: "Hello, world"
+ * trimTopic('Topic。') // Returns: "Topic"
+ */
 export function trimTopic(topic: string) {
   // Fix an issue where double quotes still show in the Indonesian language
   // This will remove the specified punctuation from the end of the string
@@ -254,12 +269,41 @@ export function getMessageImages(message: RequestMessage): string[] {
   return urls;
 }
 
+/**
+ * Determines if a given model supports vision capabilities.
+ *
+ * @remarks
+ * Checks model name against predefined vision-related keywords and specific conditions.
+ * Excludes certain models that should not be considered vision models.
+ *
+ * @param model - The name of the AI model to check
+ * @returns A boolean indicating whether the model supports vision features
+ *
+ * @example
+ * ```typescript
+ * isVisionModel('gpt-4-vision-preview') // returns true
+ * isVisionModel('gpt-3.5-turbo') // returns false
+ * ```
+ */
 export function isVisionModel(model: string) {
-  const visionModels = useAccessStore.getState().visionModels;
-  const envVisionModels = visionModels?.split(",").map((m) => m.trim());
-  if (envVisionModels?.includes(model)) {
-    return true;
-  }
+  const {visionModels} = useAccessStore.getState();
+  const envVisionModels = visionModels
+  // Note: This is a better way using the TypeScript feature instead of `&&` or `||` (ts v5.5.0-dev.20240314 I've been using)
+
+  const excludeKeywords = ["claude-3-5-haiku-20241022"];
+  const visionKeywords = [
+    "vision",
+    "claude-3",
+    "gemini-1.5-pro",
+    "gemini-1.5-flash",
+    "gemini-exp",
+    "learnlm",
+    "gpt-4o",
+    "gpt-4o-mini",
+  ];
+  const isGpt4Turbo =
+    model.includes("gpt-4-turbo") && !model.includes("preview");
+
   return (
     !EXCLUDE_VISION_MODEL_REGEXES.some((regex) => regex.test(model)) &&
     VISION_MODEL_REGEXES.some((regex) => regex.test(model))
